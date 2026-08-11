@@ -336,3 +336,80 @@ body {
   50% { opacity: 0.7; }
   100% { opacity: 1; }
 }
+
+/* Split PDF Specific Styles */
+.split-config {
+  background-color: #1e293b;
+}
+
+.split-file-preview {
+  margin-bottom: 24px;
+  background-color: rgba(30, 41, 59, 0.5);
+  border-color: #3b82f6;
+}
+
+.page-range-selector {
+  margin-bottom: 24px;
+  padding: 20px;
+  background-color: #0f172a;
+  border-radius: 8px;
+  border: 1px solid #334155;
+}
+
+.page-range-selector > label {
+  display: block;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.range-inputs {
+  display: flex;
+  gap: 16px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  overflow: hidden;
+  flex: 1;
+}
+
+.input-group span {
+  padding: 10px 14px;
+  background-color: #334155;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-right: 1px solid #475569;
+}
+
+.input-group input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #f1f5f9;
+  padding: 10px 14px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-group input:focus {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.input-group input::placeholder {
+  color: #475569;
+}
+
+.split-btn {
+  background-color: #8b5cf6; /* لون بنفسجي لتمييز الخاصية */
+}
+
+.split-btn:hover:not(:disabled) {
+  background-color: #7c3aed;
+}
