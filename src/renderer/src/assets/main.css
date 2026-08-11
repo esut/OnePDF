@@ -71,9 +71,10 @@ body {
 }
 
 .menu-item {
-  padding: 12px 24px;
+  padding: 14px 24px;
   display: flex;
   align-items: center;
+  gap: 14px; /* إضافة مسافة ثابتة ومريحة بين الأيقونة والنص */
   font-size: 0.95rem;
   color: #cbd5e1;
   cursor: pointer;
@@ -82,9 +83,9 @@ body {
 }
 
 .menu-item .icon {
-  width: 18px;
-  height: 18px;
-  margin-right: 14px;
+  width: 20px;
+  height: 20px;
+  margin-right: 0; /* قمنا بإزالتها لأننا نستخدم gap الآن */
   opacity: 0.8;
 }
 
@@ -412,4 +413,400 @@ body {
 
 .split-btn:hover:not(:disabled) {
   background-color: #7c3aed;
+}
+/* PDF Studio Specific Styles */
+.studio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* حاوية الأزرار العلوية */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* توحيد المسافات بين جميع العناصر */
+  flex-wrap: nowrap; /* منع العناصر من النزول لسطر جديد */
+}
+
+
+
+.small-btn svg {
+  width: 18px;
+  height: 18px;
+}
+.small-btn, .export-btn {
+  display: flex;
+  flex-direction: row; /* إجبار الأيقونة والنص على البقاء في خط أفقي */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 42px; /* توحيد الارتفاع */
+  padding: 0 20px;
+  white-space: nowrap; /* السر هنا: منع النص من التكدس عمودياً */
+}
+
+
+.empty-studio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+.studio-drop {
+  max-width: 500px;
+}
+
+/* Grid System for Pages */
+.pages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+  padding-bottom: 40px;
+}
+
+.page-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: grab;
+}
+
+.page-card:active {
+  cursor: grabbing;
+  transform: scale(0.98);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.page-card-header {
+  padding: 8px 12px;
+  border-bottom: 2px solid;
+  background-color: #0f172a;
+}
+
+.file-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.page-content {
+  padding: 24px 16px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-placeholder {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.page-content h4 {
+  font-size: 1.1rem;
+  color: #f1f5f9;
+}
+
+.page-actions {
+  display: flex;
+  border-top: 1px solid #334155;
+  background-color: #0f172a;
+}
+
+.page-actions button {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-actions button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.page-actions button:hover:not(:disabled) {
+  background-color: #334155;
+  color: #f8fafc;
+}
+
+.page-actions button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.page-actions .delete-page-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+/* Bulk Toolbar */
+.bulk-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 12px 24px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.bulk-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.bulk-btn {
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.bulk-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.bulk-btn:hover {
+  color: #3b82f6;
+}
+
+.bulk-btn.text-danger:hover {
+  color: #ef4444;
+}
+
+/* Page Card Additions */
+.rotation-badge {
+  background-color: #334155;
+  color: #fbbf24;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.page-actions .rotate-btn:hover {
+  color: #fbbf24;
+  background-color: rgba(251, 191, 36, 0.1);
+}
+
+/* Elegant Toggle Switch (Add Page Numbers) */
+/* إصلاح زر التبديل (Toggle Switch) لمنع التفاف النص */
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* مسافة بين الزر والنص */
+  margin-right: 0;
+  white-space: nowrap; /* منع النص من الانقسام لسطرين */
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.slider {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background-color: #334155;
+  border-radius: 24px;
+  transition: 0.3s;
+  margin-right: 10px;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: #10b981;
+}
+
+input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+.toggle-label {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  font-weight: 500;
+  line-height: 1;
+}
+/* Custom Filename Input */
+.filename-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 0 12px;
+  height: 42px;
+  margin-right: 0px;
+  transition: border-color 0.2s ease;
+}
+
+.filename-input-wrapper:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.filename-input {
+  background: transparent;
+  border: none;
+  color: #f8fafc;
+  font-size: 0.9rem;
+  outline: none;
+  width: 160px;
+  font-weight: 500;
+}
+
+.filename-input::placeholder {
+  color: #64748b;
+}
+
+.filename-input-wrapper .extension {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 4px;
+  pointer-events: none;
+}
+/* Sidebar Structural Updates */
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  position: relative;
+  background-color: #0f172a;
+  border-right: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* إلغاء الأنيميشن أثناء عملية السحب لتجنب التقطيع (Lag) */
+.sidebar.resizing {
+  transition: none;
+}
+
+/* المنطقة العلوية للـ Sidebar (الشعار وزر الطي) */
+.sidebar-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  height: 70px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* زر الطي (Toggle Button) */
+.toggle-sidebar-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.toggle-sidebar-btn:hover {
+  background-color: #1e293b;
+  color: #3b82f6;
+}
+
+.toggle-sidebar-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* حالة القائمة المطوية (Collapsed) */
+.sidebar.collapsed {
+  align-items: center;
+}
+
+.sidebar.collapsed .sidebar-top-bar {
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.sidebar.collapsed .menu-item {
+  justify-content: center;
+  padding: 14px 0;
+}
+
+.sidebar.collapsed .menu-item .icon {
+  margin: 0;
+}
+
+.sidebar.collapsed .menu-text {
+  display: none; /* إخفاء النص عند الطي */
+}
+
+/* مقبض تغيير الحجم (Resizer Handle) */
+.sidebar-resizer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  cursor: col-resize;
+  background-color: transparent;
+  transition: background-color 0.2s;
+  z-index: 10;
+}
+
+.sidebar-resizer:hover,
+.sidebar.resizing .sidebar-resizer {
+  background-color: #3b82f6; /* ظهور خط أزرق احترافي عند السحب */
 }
