@@ -810,3 +810,172 @@ input:checked + .slider::before {
 .sidebar.resizing .sidebar-resizer {
   background-color: #3b82f6; /* ظهور خط أزرق احترافي عند السحب */
 }
+/* Editor Workspace Structure */
+.editor-workspace {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #0f172a;
+}
+
+/* Toolbar */
+.editor-toolbar {
+  height: 56px;
+  background-color: #1e293b;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.tools-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tool-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.tool-btn:hover {
+  background-color: #334155;
+  color: #f8fafc;
+}
+
+.tool-btn.active {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.tool-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #334155;
+  margin: 0 8px;
+}
+
+/* Editor Main Area */
+.editor-main-area {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.canvas-container {
+  flex: 1;
+  background-color: #0b1121; /* لون داكن جداً خلف الورقة */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  padding: 40px;
+}
+
+/* ورقة الـ PDF الوهمية */
+.mock-pdf-page {
+  width: 600px;
+  height: 848px; /* نسبة A4 */
+  background-color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cbd5e1;
+}
+
+.mock-placeholder {
+  text-align: center;
+  color: #94a3b8;
+}
+
+.mock-placeholder svg {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+/* Properties Panel (اليمين) */
+.properties-panel {
+  width: 280px;
+  background-color: #1e293b;
+  border-left: 1px solid #334155;
+  padding: 24px;
+  color: #f8fafc;
+}
+
+.properties-panel h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  margin-bottom: 24px;
+}
+
+.property-group {
+  margin-bottom: 24px;
+}
+
+.property-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+}
+
+.custom-slider {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.color-picker-mock {
+  display: flex;
+  gap: 8px;
+}
+
+.color-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.color-swatch:hover {
+  border-color: white;
+}
+
+.hint-text {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Save Button in Editor */
+.save-btn {
+  background-color: #10b981; /* أخضر */
+  padding: 0 16px;
+  height: 36px;
+}
+.save-btn:hover {
+  background-color: #059669;
+}
